@@ -1,0 +1,119 @@
+/* resets */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+/* defaults */
+
+body {
+  font-family: sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+hr {
+  height: 1px;
+  border:0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+/* structure */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+div[class^="col-"] {
+  float:left;
+  position: relative;
+  min-height: 1px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.col-2 { width: 16.6666%;}
+.col-3 { width: 25%;}
+.col-4 { width: 33.33333%;}
+.col-5 { width: 41.66666%;}
+.col-6 { width: 50%;}
+.col-7 { width: 58.33333%;}
+.col-8 { width: 66.6666%;}
+.col-9 { width: 75%;}
+.col-10 { width: 83.3333%;}
+
+
+/* margins */
+
+.mb10 { margin-bottom: 10px }
+.mb20 { margin-bottom: 20px }
+.mb30 { margin-bottom: 30px }
+
+
+
+/* header */
+
+header {
+  padding: 20px 0;
+  background: #eee;
+}
+
+/* footer */
+
+footer {
+  padding: 20px 0;
+  background: #eee;
+  font-size: 14px;
+}
+
+
+
+/* alerts */
+
+.alert {
+  background: #000;
+  color: #fff;
+  padding: 10px 15px;
+}
