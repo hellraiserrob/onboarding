@@ -3,69 +3,32 @@ import { connect } from 'react-redux'
 
 import ServiceHeader from '../components/service/ServiceHeader'
 import ServiceConfigurationList from '../components/service/ServiceConfigurationList'
-import ServiceConfiguration from '../components/service/ServiceConfiguration'
+// import ServiceConfiguration from '../components/service/ServiceConfiguration'
 
-import Alert from '../components/other/Alert'
+//import Alert from '../components/other/Alert'
+
+import getService from '../utils/getService.js'
 
 class ServiceContainer extends Component {
 
-    
-    constructor(props){
-        
-        super(props)
-
-        this.state = {
-            configuration: null
-        }
-
-        this.setConfiguration = this.setConfiguration.bind(this)
-
-    }
-
-    setConfiguration(e, configuration){
-        
-        e.preventDefault()
-        
-        this.setState({
-            configuration
-        })
-
-    }
-
-    getService(services){
-
-        const id = parseInt(this.props.params.id, 0)
-        
-        return services.filter((service) => {
-            return service.id === id ? true: false
-        })[0]
-
-    }
-
     render() {
 
-        const service = this.getService(this.props.services)
-
-        
+        const { services, children } = this.props
+        const serviceId = parseInt(this.props.params.serviceId, 0)
+        const service = getService(services, serviceId)
 
         return (
             <div>
                 <ServiceHeader service={service} />
                 <div className="row cf">
                     <div className="col-4">
-                        <ServiceConfigurationList service={service} setConfiguration={this.setConfiguration} />
+                        <ServiceConfigurationList service={service} />
                     </div>
                     <div className="col-8">
 
-                        {!this.state.configuration &&
-                            <Alert>Select a configuration</Alert>
+                        {children && 
+                            children
                         }
-
-                        
-                        {this.state.configuration &&
-                            <ServiceConfiguration configuration={this.state.configuration} />
-                        }
-
 
 
                     </div>

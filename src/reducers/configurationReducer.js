@@ -1,98 +1,3 @@
-//import {  } from '../constants/questionTypes';
-
-// const initialState = {
-//     questions: [{
-//         id: 1,
-//         title: 'Question 1',
-//         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-//         answers: [{
-//             id: 1,
-//             title: 'A',
-//             value: 1
-//         },{
-//             id: 2,
-//             title: 'B',
-//             value: 2
-//         }]
-//     }, {
-//         id: 2,
-//         title: 'Question 2',
-//         description: 'Ipsum dolor sit amet, consectetur adipisicing elit',
-//         answers: [{
-//             id: 1,
-//             title: 'A',
-//             value: 1
-//         },{
-//             id: 2,
-//             title: 'B',
-//             value: 2
-//         },{
-//             id: 3,
-//             title: 'C',
-//             value: 3
-//         }]
-//     }]
-// };
-
-
-
-// const initialState = {
-//     categories: [{
-//         id: 1,
-//         name: 'Category 1',
-//         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam ad laboriosam, omnis dolores provident accusamus quod. Reiciendis hic quia, quasi odio corporis, amet ea corrupti asperiores dignissimos, illum a!',
-//         questions: [{
-//             id: 1,
-//             title: 'Question 1',
-//             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-//             answers: [{
-//                 id: 1,
-//                 title: 'What are you talking about',
-//                 value: 1
-//             },{
-//                 id: 2,
-//                 title: 'Another option',
-//                 value: 2
-//             }]
-//         },{
-//             id: 2,
-//             title: 'Question 2',
-//             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-//             answers: [{
-//                 id: 1,
-//                 title: 'What are you talking about',
-//                 value: 1
-//             },{
-//                 id: 2,
-//                 title: 'Another option',
-//                 value: 2
-//             }]
-//         }]
-//     },{
-//         id: 2,
-//         name: 'Category 2',
-//         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore totam ad laboriosam, omnis dolores provident accusamus quod. Reiciendis hic quia, quasi odio corporis, amet ea corrupti asperiores dignissimos, illum a!',
-//         questions: [{
-//             id: 1,
-//             title: 'Question 1',
-//             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-//             answers: [{
-//                 id: 1,
-//                 title: 'What are you talking about',
-//                 value: 1
-//             },{
-//                 id: 2,
-//                 title: 'Another option',
-//                 value: 2
-//             }]
-//         }]
-//     }]
-// }
-
-
-
-//import { REQUEST_QUESTIONS, RECEIVE_QUESTIONS, RECEIVE_QUESTIONS_ERROR } from '../constants/questionTypes';
-
 const initialState = {
     isError: false,
     services: [{
@@ -100,17 +5,69 @@ const initialState = {
         name: 'Service #1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
         isGlobal: true,
-        configurations: [{
-            name: 'Config #1'
-        },{
-            name: 'Config #2'
+        settings: [{
+            id: 1,
+            name: 'Settings #1',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
+            isRequired: true,
+            fields: [{
+                id: 1,
+                label: 'Limit',
+                placeholder: 'Enter a limit',
+                type: 'number',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 2,
+                label: 'Minimum',
+                placeholder: 'Enter a minimum',
+                type: 'number',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 3,
+                label: 'Type',
+                type: 'select',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{value: '-1', label: 'Select a type'},{value: '1', label: 'Credit Card'},{value: '2', label: 'Debit Card'}]
+            },{
+                id: 4,
+                label: 'Logic',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{value: '1', label: 'Yes'},{value: '2', label: 'No'}]
+            }]
+        }, {
+            id: 2,
+            name: 'Settings #2',
+            isRequired: false,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
+            fields: []
         }]
-    },{
+    }, {
         id: 2,
         name: 'Service #2',
         description: 'Consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
         isGlobal: false,
-        configurations: []
+        settings: []
+    }, {
+        id: 3,
+        name: 'Service #3',
+        description: 'Consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
+        isGlobal: false,
+        settings: []
+    }, {
+        id: 4,
+        name: 'Service #4',
+        description: 'Consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
+        isGlobal: false,
+        settings: []
     }]
 }
 
@@ -119,28 +76,45 @@ function configurationReducer(state = initialState, action) {
 
     switch (action.type) {
 
-        // case REQUEST_QUESTIONS: {
+        case 'SET_FIELD': {
 
-        //     return Object.assign({}, state, {
-        //         isFetching: true
-        //     })
-        // }
+            let { serviceId, settingsId, fieldId, txt } = action.payload;
 
-        // case RECEIVE_QUESTIONS: {
-        //     return Object.assign({}, state, {
-        //         isFetching: false,
-        //         categories: action.payload.categories,
-        //         lastUpdated: action.receivedAt
-        //     })
-        // }
+            return { services: state.services.map((service) => {
+                service.settings.map((setting) => {
+                    setting.fields.map((field) => {
+                        if (service.id === serviceId && setting.id === settingsId && field.id === fieldId) {
+                            field.value = txt
+                        }
+                        return field
+                    })
+                    return setting
+                })
+                return service
+            })}
+
+        }
         
-        // case RECEIVE_QUESTIONS_ERROR: {
-        //     return Object.assign({}, state, {
-        //         isFetching: false,
-        //         categories: [],
-        //         isError: true
-        //     })
-        // }
+        case 'RESET_FIELDS': {
+
+            let { serviceId, settingsId } = action.payload;
+
+            return { services: state.services.map((service) => {
+                service.settings.map((setting) => {
+                    setting.fields.map((field) => {
+                        if (service.id === serviceId && setting.id === settingsId) {
+                            field.value = field.originalValue
+                        }
+                        return field
+                    })
+                    return setting
+                })
+                return service
+            })}
+
+        }
+
+
 
         default: {
             return state;
