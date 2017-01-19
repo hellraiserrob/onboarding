@@ -10,7 +10,7 @@ class ServiceHeader extends Component {
         const { service } = this.props
 
         return (
-            <div>
+            <div className="text-center">
             
                 <h2 className="mb10">{service.name}</h2>
                 <p>

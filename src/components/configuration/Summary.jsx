@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 class Summary extends Component {
 
+    // componentDidUpdate(){
+    //     this.highlight()
+    // }
+
 
     getProgress(services) {
         let total = 0, complete = 0
@@ -11,7 +15,7 @@ class Summary extends Component {
             service.settings.forEach(setting => {
                 
                 setting.fields.forEach((field) => {
-                    if(field.value !== '' && field.value !== '-1'){
+                    if(field.value !== '' && field.value !== '-1' && field.isRequired){
                         complete +=1
                     }
                     if(field.isRequired){
@@ -22,7 +26,7 @@ class Summary extends Component {
             })
             
 
-        })        
+        })
 
         return {
             total, complete,
@@ -35,6 +39,7 @@ class Summary extends Component {
         return Math.round(complete / total * 100)
     }
 
+    
 
 
 
@@ -43,6 +48,8 @@ class Summary extends Component {
         const { services } = this.props
 
         const progress = this.getProgress(services)
+
+       
 
         return (
             <div className="row cf mb30">

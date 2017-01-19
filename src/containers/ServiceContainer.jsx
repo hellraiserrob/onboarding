@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 import ServiceHeader from '../components/service/ServiceHeader'
 import ServiceConfigurationList from '../components/service/ServiceConfigurationList'
 // import ServiceConfiguration from '../components/service/ServiceConfiguration'
+
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 //import Alert from '../components/other/Alert'
 
@@ -20,15 +24,25 @@ class ServiceContainer extends Component {
         return (
             <div>
                 <ServiceHeader service={service} />
-                <div className="row cf">
-                    <div className="col-4">
+                <div className="row no-gutter cf">
+                    <div className="col-4">    
                         <ServiceConfigurationList service={service} />
                     </div>
                     <div className="col-8">
 
-                        {children && 
-                            children
-                        }
+                        <ReactCSSTransitionGroup
+                            transitionName="example"
+                            transitionAppear={true}
+                            transitionAppearTimeout={300}
+                            transitionEnterTimeout={500}
+                            transitionLeaveTimeout={300}
+                            >
+
+                            {children && React.cloneElement(children, {
+                                key: location.pathname
+                            })}
+
+                        </ReactCSSTransitionGroup>
 
 
                     </div>

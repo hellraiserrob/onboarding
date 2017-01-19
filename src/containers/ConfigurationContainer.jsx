@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { Link } from 'react-router'
 
+
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+
 import Summary from '../components/configuration/Summary'
 import Next from '../components/configuration/Next'
 import Previous from '../components/configuration/Previous'
@@ -20,26 +24,36 @@ class ConfigurationContainer extends Component {
             <div>
 
                 <Summary services={services} />
+                
+                <hr className="mb30" />     
 
                 <div className="row cf mb20">
-                    <div className="col-6">
+                    <div className="col-4">
                         <Previous serviceId={serviceId} services={services} />
                     </div>
-                    <div className="col-6 text-right">
+                    <div className="col-4">
+                        <Dots serviceId={serviceId} services={services} />
+                    </div>
+                    <div className="col-4 text-right">
                         <Next serviceId={serviceId} services={services} />
                     </div>
                 </div>
                 
 
-                <hr className="mb20" />
 
-                <Dots serviceId={serviceId} services={services} />
+                <ReactCSSTransitionGroup
+                    transitionName="example"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}
+                    >       
 
-                <hr className="mb20" />            
+                    {children && React.cloneElement(children, {
+                        key: location.pathname
+                    })}
 
-                {children && React.cloneElement(children, {
-                    key: location.pathname
-                })}
+                </ReactCSSTransitionGroup>
 
 
             </div>

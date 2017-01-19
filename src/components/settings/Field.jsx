@@ -4,9 +4,24 @@ class Field extends Component {
 
     constructor(props){
         super(props)
+
         this.handleChange = this.handleChange.bind(this)
         this.isChecked = this.isChecked.bind(this)
+        this.setDirty = this.setDirty.bind(this)
+
+        this.state = {
+            pristine: true,
+            value: ''
+        }
     }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            value: nextProps.field.value
+        })
+    }
+
+
 
     handleChange(e){
 
@@ -14,7 +29,15 @@ class Field extends Component {
         let { serviceId, settingsId} = this.props
         let fieldId = this.props.field.id
         this.props.setField(serviceId, settingsId, fieldId, text)
+
+        this.setDirty();
         
+    }
+
+    setDirty(){
+        this.setState({
+            pristine: false
+        })
     }
 
     isChecked(field, option){
@@ -39,7 +62,7 @@ class Field extends Component {
                 </label>
 
                 {(field.type === 'text' || field.type === 'number') &&
-                    <input placeholder={field.placeholder} type={field.type} value={field.value} className="text-field" onChange={this.handleChange} />
+                    <input placeholder={field.placeholder} type={field.type} value={this.state.value} className="text-field" onBlur={this.setDirty} onChange={this.handleChange} />
                 }
 
                 
@@ -58,14 +81,15 @@ class Field extends Component {
                 }
 
                 {field.type === 'select' &&
-                    <select value={field.value} className="select-field" onChange={this.handleChange}>
+                    <select value={field.value} className="select-field" onBlur={this.setDirty} onChange={this.handleChange}>
                         {field.options.map((option, index) => <option key={index} value={option.value}>{option.label}</option>)}
                     </select>
                 }
 
-                {field.isRequired && (field.value.length === 0 || field.value === '-1') &&
+                {(field.isRequired && !this.state.pristine) && (this.state.value.length === 0 || this.state.value === '-1') &&
                     <div className="error">{field.label} is a required field</div>
                 }
+
                 
             </div>
         )

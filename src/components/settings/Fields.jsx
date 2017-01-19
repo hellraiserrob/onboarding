@@ -17,15 +17,17 @@ class Fields extends Component {
                                                             settingsId={settings.id}
                                                             setField={this.props.setField}
                                                             field={field}
-                                                            key={index} />)
+                                                            key={field.id} />)
                 }
+
+                <hr className="mb20" />
 
                 <div className="row">
                     <div className="col-6">
-                        <button onClick={() => this.props.resetFields(serviceId, settings.id)} className="btn btn--secondary">Reset</button>
+                        <a href="#" onClick={() => this.props.resetFields(serviceId, settings.id)} className="">Reset</a>
                     </div>
                     <div className="col-6 text-right">
-                        <button className="btn">Save</button>
+                        <a href="#" className="">Save</a>
                     </div>
                 </div>
                 

@@ -46,9 +46,33 @@ const initialState = {
         }, {
             id: 2,
             name: 'Settings #2',
-            isRequired: false,
+            isRequired: true,
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
-            fields: []
+            fields: [{
+                id: 5,
+                label: 'Different',
+                placeholder: 'Enter a different',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 6,
+                label: 'Minimum 2',
+                placeholder: 'Enter a minimum',
+                type: 'number',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 7,
+                label: 'Logic',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{value: '1', label: 'Yes'},{value: '2', label: 'No'}]
+            }]
         }]
     }, {
         id: 2,

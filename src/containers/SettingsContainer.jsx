@@ -24,7 +24,7 @@ class SettingsContainer extends Component {
         const settings = getSettings(service, settingsId)
 
         return (
-            <div>
+            <div className="p30 bg-white cf">
                 <h4 className="mb10">{settings.name} </h4>
                 <p>{settings.description}</p>
                 

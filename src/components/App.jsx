@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+
 import '../css/app.css';
+
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
-import Breadcrumbs from '../components/other/Breadcrumbs'
+// import Breadcrumbs from '../components/other/Breadcrumbs'
+
+
 
 class App extends Component {
   render() {
@@ -12,9 +17,16 @@ class App extends Component {
 
     return (
       <div>
-        <Header />
-        <Breadcrumbs />
-      
+
+        <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+					transitionAppearTimeout={300}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          <Header />
+        </ReactCSSTransitionGroup>
+              
         <div className="container mb30">
           {React.cloneElement(children, {
             key: location.pathname
