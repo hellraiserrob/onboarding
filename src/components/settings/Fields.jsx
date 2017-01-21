@@ -24,7 +24,7 @@ class Fields extends Component {
 
                 <div className="row">
                     <div className="col-6">
-                        <a href="#" onClick={() => this.props.resetFields(serviceId, settings.id)} className="">Reset</a>
+                        <a href="#" onClick={(e) => this.props.resetFields(e, serviceId, settings.id)} className="">Reset</a>
                     </div>
                     <div className="col-6 text-right">
                         <a href="#" className="">Save</a>

@@ -12,9 +12,8 @@ const initialState = {
             isRequired: true,
             fields: [{
                 id: 1,
-                label: 'Limit',
-                placeholder: 'Enter a limit',
-                type: 'number',
+                label: 'Image',
+                type: 'file',
                 value: '',
                 originalValue: '',
                 isRequired: true

@@ -55,6 +55,20 @@ class ConfigurationContainer extends Component {
 
                 </ReactCSSTransitionGroup>
 
+                <hr className="mb30" />     
+
+                <div className="row cf mb20">
+                    <div className="col-4">
+                        <Previous serviceId={serviceId} services={services} />
+                    </div>
+                    <div className="col-4">
+                        <Dots serviceId={serviceId} services={services} />
+                    </div>
+                    <div className="col-4 text-right">
+                        <Next serviceId={serviceId} services={services} />
+                    </div>
+                </div>
+
 
             </div>
         )

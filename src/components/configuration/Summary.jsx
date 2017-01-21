@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import ProgressBar from '../other/ProgressBar'
+
 class Summary extends Component {
 
     // componentDidUpdate(){
@@ -64,7 +66,13 @@ class Summary extends Component {
                 <div className="col-20">
                     <p className="mb10 text-uppercase text-15">Progress</p>
                     <h1 className="mb10">{progress.percent}%</h1>
+                    
+                    <div className="mb10">
+                        <ProgressBar percent={progress.percent} />
+                    </div>
+
                     <small>{progress.complete}/{progress.total} mandatory problems parameters</small>
+
                 </div>
                 <div className="col-20">
                     <p className="mb10 text-uppercase text-15">Tasks per day</p>

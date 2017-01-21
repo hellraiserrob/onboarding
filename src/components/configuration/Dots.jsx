@@ -10,7 +10,10 @@ class Dots extends Component {
         return (
             <ul className="dots">
                 {services.map((service, index) => <li key={index}>
-                    <Link activeClassName="active" to={`/configuration/service/${service.id}`} title={service.name}>{service.name}</Link>
+                    <Link activeClassName="active" to={`/configuration/service/${service.id}`} title={service.name}>
+                        {service.name}
+                        <div className="tooltip">{service.name}</div>
+                    </Link>
                 </li>)}
             </ul>
         )

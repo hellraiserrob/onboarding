@@ -50,8 +50,9 @@ function mapDispatchToProps(dispatch) {
 		handleSetField(serviceId, settingsId, fieldId, txt) {
 			dispatch(setField(serviceId, settingsId, fieldId, txt))
 		},
-        handleResetFields(serviceId, settingsId) {
+        handleResetFields(e,serviceId, settingsId) {
 			dispatch(resetFields(serviceId, settingsId))
+            e.preventDefault()
 		}
 	}
 }

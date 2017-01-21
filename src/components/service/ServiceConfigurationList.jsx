@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ProgressBar from '../other/ProgressBar'
 
 class ServiceConfigurationList extends Component {
 
@@ -22,8 +23,13 @@ class ServiceConfigurationList extends Component {
         }
 
         return {
-            total, complete
+            total, complete,
+            percent: this.getPercent(complete, total)
         }
+    }
+
+    getPercent(complete, total){
+        return Math.round(complete / total * 100)
     }
 
     render() {
@@ -41,9 +47,7 @@ class ServiceConfigurationList extends Component {
                     {setting.name} 
 
                     {setting.isRequired && 
-                        <span className="progress">
-                                {status.complete} / {status.total}
-                        </span>
+                        <ProgressBar percent={status.percent} />
                     }
                 </Link>
             </li>

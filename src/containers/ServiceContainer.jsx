@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import ServiceHeader from '../components/service/ServiceHeader'
@@ -21,8 +22,15 @@ class ServiceContainer extends Component {
         const serviceId = parseInt(this.props.params.serviceId, 0)
         const service = getService(services, serviceId)
 
+
+        // if(service.settings.length > 0){
+        //     let first = service.settings[0]
+
+        //     router.push('/users/12')
+        // }
+
         return (
-            <div>
+            <div className="mb30">
                 <ServiceHeader service={service} />
                 <div className="row no-gutter cf">
                     <div className="col-4">    
