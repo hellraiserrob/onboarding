@@ -25,7 +25,8 @@ class SettingsContainer extends Component {
 
         return (
             <div className="p30 bg-white cf">
-                <h4 className="mb10">{settings.name} </h4>
+                <h3 className="mb20"><i className="fa fa-cog"></i> {settings.name} </h3>
+                <hr className="mb20"/>
                 <p>{settings.description}</p>
                 
                 <Fields serviceId={service.id} resetFields={this.props.handleResetFields} setField={this.props.handleSetField} settings={settings} />

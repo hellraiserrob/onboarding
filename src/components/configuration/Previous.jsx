@@ -29,7 +29,7 @@ class Previous extends Component {
         return (
             <div className="">
                 {previous &&
-                    <Link to={`/configuration/service/${previous.id}`}><i className="fa fa-chevron-left"></i> {previous.name}</Link>
+                    <Link className="previousBtn animated bounce" to={`/configuration/service/${previous.id}`}><i className="fa fa-chevron-left"></i> {previous.name}</Link>
                 }
             </div>
         )

@@ -23,6 +23,10 @@ class ConfigurationContainer extends Component {
         return (
             <div>
 
+                <h1 className="text-uppercase mb20">Product Name</h1>
+
+                <hr className="mb30"/>
+
                 <Summary services={services} />
                 
                 <hr className="mb30" />     

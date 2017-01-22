@@ -46,8 +46,12 @@ class ServiceConfigurationList extends Component {
                     
                     {setting.name} 
 
-                    {setting.isRequired && 
+                    {setting.isRequired && status.percent !== 100 &&
                         <ProgressBar percent={status.percent} />
+                    }
+
+                    {setting.isRequired && status.percent === 100 &&
+                        <div className="fa fa-check tick animated rubberBand"></div>
                     }
                 </Link>
             </li>

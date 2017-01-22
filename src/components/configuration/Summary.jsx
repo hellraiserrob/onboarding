@@ -67,7 +67,7 @@ class Summary extends Component {
                         <ProgressBar percent={progress.percent} />
                     </div>
 
-                    <small>{progress.complete}/{progress.total} mandatory problems parameters</small>
+                    <small>{progress.complete}/{progress.total} mandatory problem parameters</small>
 
                 </div>
                 <div className="col-20">
