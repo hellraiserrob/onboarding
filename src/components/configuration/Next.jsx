@@ -34,7 +34,7 @@ class Next extends Component {
         return (
             <div className="">
                 {next &&
-                    <Link to={`/configuration/service/${next.id}`}>{next.name} &gt;</Link>
+                    <Link to={`/configuration/service/${next.id}`}>{next.name} <i className="fa fa-chevron-right"></i></Link>
                 }
             </div>
         )

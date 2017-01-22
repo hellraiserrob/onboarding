@@ -10,7 +10,7 @@ class ServiceHeader extends Component {
         const { service } = this.props
 
         return (
-            <div className="text-center">
+            <div className="mb30">
             
                 <h2 className="mb10">{service.name}</h2>
                 <p>
@@ -21,7 +21,7 @@ class ServiceHeader extends Component {
                     <Alert>This is a global configuration</Alert>
                 }
 
-                <hr className="mb30" />
+                
                 
             </div>
         )

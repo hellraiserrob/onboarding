@@ -130,11 +130,15 @@ class Field extends Component {
                             className="upload mb10"
                             style={this.state.uploadStyle}
                             >
-                            Drag in a file from explorer/finder
+                            Drag in a file here    
+
+                            <div className="alert__plus"></div>
                         </div>
 
+                        
+
                         <div>
-                            <small>{field.value}</small>
+                            <a href="#"><small>{field.value}</small></a>
                         </div>
 
                     </div>

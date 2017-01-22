@@ -14,14 +14,16 @@ class Number extends Component {
     }
 
     componentWillUpdate(){
-        ReactDOM.findDOMNode(this).classList.add('bounce');
+        window.setTimeout(() => {
+            ReactDOM.findDOMNode(this).classList.add('bounce');
+        }, this.props.delay)
     }
     
     componentDidUpdate(){
         
         window.setTimeout(() => {
             ReactDOM.findDOMNode(this).classList.remove('bounce');
-        }, this.props.delay)
+        }, 1000)
 
 
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import 'font-awesome/css/font-awesome.css';
 import '../css/app.css';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
