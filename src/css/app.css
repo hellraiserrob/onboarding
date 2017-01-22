@@ -439,11 +439,20 @@ label.radio {
   line-height: 200px;
   color: #999;
   text-align: center;
-  border: 3px dashed #ccc;
+  border: 2px dashed #ccc;
   font-size: 13px;
+  border-radius: 5px;
 }
 
 /* animations */
+
+.animated {
+  transition: all ease 0.3s;
+}
+
+.bounce {
+  transform: translateY(-30px)
+}
 
 .example-appear {
   opacity: 0.01;

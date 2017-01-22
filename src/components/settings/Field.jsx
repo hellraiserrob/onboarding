@@ -18,18 +18,11 @@ class Field extends Component {
 
         this.state = {
             pristine: true,
-            value: '',
             uploadStyle: {}
         }
     }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({
-            value: nextProps.field.value
-        })
-    }
-
-
+    
 
     handleChange(e){
 
@@ -69,8 +62,6 @@ class Field extends Component {
         e.stopPropagation();
         e.preventDefault();
 
-        console.log(e)
-
         this.highlightUpload()
         
     }
@@ -78,8 +69,6 @@ class Field extends Component {
     ondragleave(e){
         e.stopPropagation();
         e.preventDefault();
-
-        console.log(e)
 
         this.resetUpload()
         
@@ -89,7 +78,6 @@ class Field extends Component {
         e.stopPropagation();
         e.preventDefault();
 
-        console.log(e)
     }
 
     ondrop(e){
@@ -155,7 +143,7 @@ class Field extends Component {
 
 
                 {(field.type === 'text' || field.type === 'number') &&
-                    <input placeholder={field.placeholder} type={field.type} value={this.state.value} className="text-field" onBlur={this.setDirty} onChange={this.handleChange} />
+                    <input placeholder={field.placeholder} type={field.type} value={field.value} className="text-field"  onChange={this.handleChange} onBlur={this.setDirty} />
                 }
 
                 
@@ -179,7 +167,7 @@ class Field extends Component {
                     </select>
                 }
 
-                {(field.isRequired && !this.state.pristine) && (this.state.value.length === 0 || this.state.value === '-1') &&
+                {(field.isRequired && !this.state.pristine) && (field.value.length === 0 || field.value === '-1') &&
                     <div className="error">{field.label} is a required field</div>
                 }
 

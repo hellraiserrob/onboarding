@@ -78,7 +78,74 @@ const initialState = {
         name: 'Service #2',
         description: 'Consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
         isGlobal: false,
-        settings: []
+        settings: [{
+            id: 1,
+            name: 'Settings #1',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
+            isRequired: true,
+            fields: [{
+                id: 8,
+                label: 'Image',
+                type: 'file',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 9,
+                label: 'Minimum',
+                placeholder: 'Enter a minimum',
+                type: 'number',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 10,
+                label: 'Type',
+                type: 'select',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{value: '-1', label: 'Select a type'},{value: '1', label: 'Credit Card'},{value: '2', label: 'Debit Card'}]
+            },{
+                id: 11,
+                label: 'Logic',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{value: '1', label: 'Yes'},{value: '2', label: 'No'}]
+            }]
+        }, {
+            id: 2,
+            name: 'Settings #2',
+            isRequired: true,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
+            fields: [{
+                id: 12,
+                label: 'Different',
+                placeholder: 'Enter a different',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 13,
+                label: 'Minimum 2',
+                placeholder: 'Enter a minimum',
+                type: 'number',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            },{
+                id: 14,
+                label: 'Logic',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{value: '1', label: 'Yes'},{value: '2', label: 'No'}]
+            }]
+        }]
     }, {
         id: 3,
         name: 'Service #3',

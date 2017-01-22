@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// import shortid from 'shortid' 
 import Field from './Field'
 
 class Fields extends Component {
