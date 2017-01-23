@@ -3,14 +3,14 @@ import { Link } from 'react-router'
 
 import avatar from '../../images/avatar.png'
 
+
 const Header = () => (
     <header className="mb40">
         <div className="container">
             <div className="row cf">
                 <div className="col-6">
-                    <Link className="logo" to="/">
-                    {/*<i className="fa fa-cog"></i>*/}
-                    Logo
+                    <Link className="logo text-uppercase" to="/">
+                        Logo
                     </Link>
                 </div>
                 <div className="col-6 text-right">

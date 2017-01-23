@@ -25,7 +25,7 @@ class ConfigurationContainer extends Component {
 
                 <div className="row mb20 cf">
                     <div className="col-8">
-                        <h1 className="text-uppercase">
+                        <h1 className="text-uppercase text-100">
                             {/*<i className="fa fa-paper-plane-o"></i>*/}
                             Product Name
                         </h1>
@@ -81,7 +81,6 @@ class ConfigurationContainer extends Component {
 
                 </ReactCSSTransitionGroup>
 
-                <hr className="mb30" />
 
                 <div className="row cf mb20">
                     <div className="col-4">

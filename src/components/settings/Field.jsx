@@ -201,12 +201,15 @@ class Field extends Component {
                 {field.help &&
                     <div className="pt10">
                         {this.state.showHelp &&
-                            <div className="help mb10">
-                                <small>{field.help}</small>
+                            <div className="mb10">
+                                <small className="help">{field.help}</small>
+                                <a href="#" onClick={this.toggleHelp} className=""><small>Hide help</small></a>
                             </div>
                         }
-                        
-                        <a href="#" onClick={this.toggleHelp} className=""><small>Show/Hide help</small></a>
+
+                        {!this.state.showHelp &&
+                            <a href="#" onClick={this.toggleHelp} className=""><small>Show help</small></a>
+                        }
 
                         
 

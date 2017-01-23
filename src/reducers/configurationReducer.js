@@ -135,41 +135,135 @@ const initialState = {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
         isGlobal: false,
         settings: [{
-            id: 5,
+            id: 1,
             name: 'Customisation',
-            description: '',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti,',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 70,
+                label: 'Custom image on card',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{ value: '1', label: 'Yes' }, { value: '2', label: 'No' }],
+                help: 'Option to customize image on card (plastic).'
+            }, {
+                id: 71,
+                label: 'Logo',
+                type: 'file',
+                value: '',
+                originalValue: '',
+                isRequired: true
+            }]
         }, {
-            id: 6,
+            id: 2,
             name: 'BIN',
-            description: '',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti,',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 72,
+                label: 'Product BIN',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'Key in the digits that follow the product BIN (i.e. if the PAN is 16 digits, provide here 10 digits). Test range.',
+                placeholder: 'Enter a value'
+            },{
+                id: 73,
+                label: 'BIN range min # (prod)',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'Key in the digits that follow the product BIN (i.e. if the PAN is 16 digits, provide here 10 digits). Production range.',
+                placeholder: 'Enter a value'
+            },{
+                id: 74,
+                label: 'BIN range max # (prod)',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'Key in the digits that follow the product BIN (i.e. if the PAN is 16 digits, provide here 10 digits). Production range.',
+                placeholder: 'Enter a value'
+            },{
+                id: 75,
+                label: 'Check digit formula',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'Standard' }, { value: '2', label: 'Custom' }],
+                help: 'How check digit is calculated'
+            }]
         }, {
-            id: 7,
+            id: 3,
             name: 'PAN',
-            description: '',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti,',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 76,
+                label: 'PAN generation',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'Random' }, { value: '2', label: 'Custom' }],
+                help: 'How PAN is generated'
+            }, {
+                id: 77,
+                label: 'Embossing name length',
+                type: 'number',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'How long can the embossing name be',
+                placeholder: 'Enter a value'
+            }]
         }, {
-            id: 8,
-            name: 'Expiry / Renewal',
-            description: '',
-            isRequired: true,
-            fields: []
-        }, {
-            id: 9,
-            name: 'Activation',
-            description: '',
-            isRequired: true,
-            fields: []
-        }, {
-            id: 10,
+            id: 4,
             name: 'PIN generation',
-            description: '',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti,',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 100,
+                label: 'PIN for new cards',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{ value: '1', label: 'Create new' }, { value: '2', label: 'Keep old' }],
+                help: 'Is new PIN created or old one used'
+            },{
+                id: 101,
+                label: 'PIN for reissued cards',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{ value: '1', label: 'Create new' }, { value: '2', label: 'Keep old' }],
+                help: 'Is new PIN created or old one used'
+            },{
+                id: 102,
+                label: 'PIN for replaced cards',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{ value: '1', label: 'Create new' }, { value: '2', label: 'Keep old' }],
+                help: 'Is new PIN created or old one used'
+            },{
+                id: 103,
+                label: 'PIN when renewing cards',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: false,
+                options: [{ value: '1', label: 'Create new' }, { value: '2', label: 'Keep old' }],
+                help: 'Is new PIN created or old one used'
+            }]
         }]
     }, {
         id: 3,
@@ -177,17 +271,98 @@ const initialState = {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
         isGlobal: false,
         settings: [{
-            id: 11,
+            id: 1,
             name: 'Blocks',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 60,
+                label: 'eComm Block',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'Yes' }, { value: '2', label: 'No' }],
+                help: 'If this usage limiter is active, all eCommerce authorizations are declined'
+            }, {
+                id: 61,
+                label: 'Gambling Block',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'Yes' }, { value: '2', label: 'No' }],
+                help: 'If this usage limiter is active, all gambling authorizations are declined'
+            }, {
+                id: 62,
+                label: 'Regional Block/GeoBlock',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'Yes' }, { value: '2', label: 'No' }],
+                help: 'If this usage limiter is active, all authorizations from listed countries are declined.'
+            }]
         }, {
-            id: 12,
+            id: 2,
             name: 'Limits',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 63,
+                label: 'Daily ATM limit',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'not in use' }, { value: '2', label: 'Any amount for all' }, { value: '3', label: 'Any personal amount' }, { value: '4', label: 'Not i use' }],
+                help: 'If this usage limiter is active, all authorizations from ATM that go over daily accrued limit are declined. '
+            }, {
+                id: 64,
+                label: '7 days ATM limit',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'not in use' }, { value: '2', label: 'Any amount for all' }, { value: '3', label: 'Any personal amount' }, { value: '4', label: 'Not i use' }],
+                help: 'If this usage limiter is active, all authorizations from ATM that go over 7 days accrued limit are declined. '
+            }, {
+                id: 65,
+                label: 'Monthly ATM limit',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'not in use' }, { value: '2', label: 'Any amount for all' }, { value: '3', label: 'Any personal amount' }, { value: '4', label: 'Not i use' }],
+                help: 'If this usage limiter is active, all authorizations from ATM that go over monthly accrued limit are declined. '
+            }, {
+                id: 66,
+                label: 'Daily Cash limit',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'not in use' }, { value: '2', label: 'Any amount for all' }, { value: '3', label: 'Any personal amount' }, { value: '4', label: 'Not i use' }],
+                help: 'If this usage limiter is active, all authorizations from ATM and also Cash transactions that go over daily accrued limit are declined. '
+            }, {
+                id: 67,
+                label: '7 days Cash limit',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'not in use' }, { value: '2', label: 'Any amount for all' }, { value: '3', label: 'Any personal amount' }, { value: '4', label: 'Not i use' }],
+                help: 'If this usage limiter is active, all authorizations from ATM and also Cash transactions that go over 7 days accrued limit are declined. '
+            }, {
+                id: 68,
+                label: 'Monthly Cash limit',
+                type: 'radio',
+                value: '-1',
+                originalValue: '-1',
+                isRequired: true,
+                options: [{ value: '1', label: 'not in use' }, { value: '2', label: 'Any amount for all' }, { value: '3', label: 'Any personal amount' }, { value: '4', label: 'Not i use' }],
+                help: 'If this usage limiter is active, all authorizations from ATM and also Cash transactions that go over monthly accrued limit are declined.'
+            }]
         }]
     }, {
         id: 4,
@@ -195,17 +370,80 @@ const initialState = {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sequi aliquid hic deleniti, tempore animi ipsa similique omnis suscipit, quibusdam repudiandae, et doloremque non excepturi, nesciunt quos neque qui esse?',
         isGlobal: false,
         settings: [{
-            id: 13,
+            id: 1,
             name: 'General',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 55,
+                label: 'Authorization validity period',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'The number of calendar days unmatched authorisations are kept in the system before being automatically dropped and does not effect the open-to-buy'
+            }, {
+                id: 56,
+                label: 'Member ID',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'Member ID from card scheme that is needed for routing purposes'
+            }]
         }, {
-            id: 14,
+            id: 2,
             name: 'Rules / limits',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             isRequired: true,
-            fields: []
+            fields: [{
+                id: 50,
+                label: 'Spending limit general per day',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'How much spending is allowed per day when in STIP mode'
+            }, {
+                id: 51,
+                label: 'Shadow limit',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'How much overlimit usage is allowed for contract'
+            }, {
+                id: 52,
+                label: 'Card ID or PAN',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: 'Is card ID or PAN used in non-scheme card transactions, Is this really needed here, since we anyway create the card ID.'
+            }, {
+                id: 53,
+                label: 'Posting rules',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: ''
+            }, {
+                id: 54,
+                label: 'Payment priorities',
+                placeholder: 'Enter a value',
+                type: 'text',
+                value: '',
+                originalValue: '',
+                isRequired: true,
+                help: ''
+            }]
         }]
     }, {
         id: 5,
@@ -275,16 +513,16 @@ const initialState = {
                 value: '-1',
                 originalValue: '-1',
                 isRequired: true,
-                options: [{value: '-1', label: 'Select a type'},{value: '1', label: 'Electronic statement'},{value: '2', label: 'No statement'}],
+                options: [{ value: '-1', label: 'Select a type' }, { value: '1', label: 'Electronic statement' }, { value: '2', label: 'No statement' }],
                 help: 'Which statement delivery methods are in use'
-            },{
+            }, {
                 id: 31,
                 label: 'Default delivery methods',
                 type: 'select',
                 value: '-1',
                 originalValue: '-1',
                 isRequired: true,
-                options: [{value: '-1', label: 'Select a type'},{value: '1', label: 'Electronic statement'},{value: '2', label: 'No statement'}],
+                options: [{ value: '-1', label: 'Select a type' }, { value: '1', label: 'Electronic statement' }, { value: '2', label: 'No statement' }],
                 help: 'Which statement delivery methods is the default'
             }]
         }, {
@@ -301,7 +539,7 @@ const initialState = {
                 originalValue: '',
                 isRequired: true,
                 help: 'Minimum flat amount for minimum payment'
-            },{
+            }, {
                 id: 41,
                 label: 'Minimum payment %',
                 placeholder: 'Enter a value',
@@ -310,7 +548,7 @@ const initialState = {
                 originalValue: '',
                 isRequired: true,
                 help: 'Minimum percentage for minimum payment'
-            },{
+            }, {
                 id: 42,
                 label: 'Minimum amount for re-aging',
                 placeholder: 'Enter a value',
@@ -319,7 +557,7 @@ const initialState = {
                 originalValue: '',
                 isRequired: true,
                 help: 'If after Payment processing Past Due bucket amount is less than parameter value – Past Due level is getting better to the previous one – amount from this Past Due bucket is automatically transferred to the previous Past Due bucket (or – to Current Due if initial Past Due bucket was Past Due 01).'
-            },{
+            }, {
                 id: 43,
                 label: 'Minimum due tolerance',
                 placeholder: 'Enter a value',
@@ -328,7 +566,7 @@ const initialState = {
                 originalValue: '',
                 isRequired: true,
                 help: 'If the amount the customer is paying is less than the minimum due, but the difference is not more than this tolerance, the customer will not be considered overdue.'
-            },{
+            }, {
                 id: 44,
                 label: 'Minimum payment calculation method',
                 placeholder: 'Enter a value',
@@ -337,7 +575,7 @@ const initialState = {
                 originalValue: '',
                 isRequired: true,
                 help: ''
-            },{
+            }, {
                 id: 45,
                 label: 'Memo statement to supplementary card holders',
                 placeholder: 'Enter a value',
@@ -346,7 +584,7 @@ const initialState = {
                 originalValue: '',
                 isRequired: true,
                 help: ''
-            },{
+            }, {
                 id: 46,
                 label: 'Over limit detection',
                 placeholder: 'Enter a value',
