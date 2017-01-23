@@ -6,6 +6,10 @@ class ProgressBar extends Component {
 
         let { percent } = this.props
 
+        if(percent === 0){
+            percent = 2
+        }
+
         let style = {
             width: `${percent}%`
         }

@@ -51,7 +51,7 @@ class ServiceConfigurationList extends Component {
                     }
 
                     {setting.isRequired && status.percent === 100 &&
-                        <div className="fa fa-check tick animated rubberBand"></div>
+                        <div className="fa fa-check-circle-o tick animated fadeIn"></div>
                     }
                 </Link>
             </li>

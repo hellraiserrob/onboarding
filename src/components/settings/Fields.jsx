@@ -23,12 +23,12 @@ class Fields extends Component {
 
                 <hr className="mb20" />
 
-                <div className="row">
+                <div className="row cf">
                     <div className="col-6">
-                        <a href="#" onClick={(e) => this.props.resetFields(e, serviceId, settings.id)} className="">Reset</a>
+                        <a href="#" onClick={(e) => this.props.resetFields(e, serviceId, settings.id)} className="btn btn--secondary">Reset</a>
                     </div>
                     <div className="col-6 text-right">
-                        <a href="#" className="">Save</a>
+                        <a href="#" className="btn">Save</a>
                     </div>
                 </div>
                 

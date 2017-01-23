@@ -34,7 +34,7 @@ class Next extends Component {
         return (
             <div className="">
                 {next &&
-                    <Link className="nextBtn animated bounce" to={`/configuration/service/${next.id}`}>{next.name} <i className="fa fa-chevron-right"></i></Link>
+                    <Link className="nextBtn animated fadeIn" to={`/configuration/service/${next.id}`}>{next.name} <i className="fa fa-chevron-right"></i></Link>
                 }
             </div>
         )

@@ -25,7 +25,7 @@ class SettingsContainer extends Component {
 
         return (
             <div className="p30 bg-white cf">
-                <h3 className="mb20"><i className="fa fa-cog"></i> {settings.name} </h3>
+                <h3 className="mb20">{settings.name} </h3>
                 <hr className="mb20"/>
                 <p>{settings.description}</p>
                 

@@ -23,15 +23,37 @@ class ConfigurationContainer extends Component {
         return (
             <div>
 
-                <h1 className="text-uppercase mb20">Product Name</h1>
+                <div className="row mb20 cf">
+                    <div className="col-8">
+                        <h1 className="text-uppercase">
+                            {/*<i className="fa fa-paper-plane-o"></i>*/}
+                            Product Name
+                        </h1>
+                    </div>
+                    <div className="col-4">
 
-                <hr className="mb30"/>
+                        <div className="relative">
+                            <div className="select-field__arrow">
+                                <div className="fa fa-caret-down"></div>
+                            </div>
+                            <select defaultValue="0" className="select-field select-field--naked">
+                                <option value="0">Select a Product</option>
+                                <option value="1">Product Name</option>
+                                <option value="2">Another Name</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <hr className="mb30" />
 
                 <Summary services={services} />
-                
-                <hr className="mb30" />     
 
-                <div className="row cf mb20">
+                <hr className="mb30" />
+
+                <div className="row cf mb30">
                     <div className="col-4">
                         <Previous serviceId={serviceId} services={services} />
                     </div>
@@ -42,7 +64,7 @@ class ConfigurationContainer extends Component {
                         <Next serviceId={serviceId} services={services} />
                     </div>
                 </div>
-                
+
 
 
                 <ReactCSSTransitionGroup
@@ -51,7 +73,7 @@ class ConfigurationContainer extends Component {
                     transitionAppearTimeout={300}
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}
-                    >       
+                    >
 
                     {children && React.cloneElement(children, {
                         key: location.pathname
@@ -59,7 +81,7 @@ class ConfigurationContainer extends Component {
 
                 </ReactCSSTransitionGroup>
 
-                <hr className="mb30" />     
+                <hr className="mb30" />
 
                 <div className="row cf mb20">
                     <div className="col-4">

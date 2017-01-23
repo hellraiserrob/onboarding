@@ -15,6 +15,7 @@ class Field extends Component {
         this.ondragleave = this.ondragleave.bind(this)
         this.ondrop = this.ondrop.bind(this)
         
+        this.toggleHelp = this.toggleHelp.bind(this)
 
         this.state = {
             pristine: true,
@@ -108,6 +109,19 @@ class Field extends Component {
         })
     }
 
+
+    toggleHelp(e){
+
+        e.preventDefault();
+
+        let showHelp = this.state.showHelp
+
+        this.setState({
+            showHelp: !showHelp
+        })
+
+    }
+
     render() {
 
         let { field } = this.props
@@ -116,7 +130,7 @@ class Field extends Component {
             <div className="mb20">
                 
                 <label>
-                    {field.label} {field.isRequired && <span>*</span>}
+                    {field.label} {field.isRequired && <em className="required"></em>}
                 </label>
 
                 {field.type === 'file' &&
@@ -166,13 +180,37 @@ class Field extends Component {
                 }
 
                 {field.type === 'select' &&
-                    <select value={field.value} className="select-field" onBlur={this.setDirty} onChange={this.handleChange}>
-                        {field.options.map((option, index) => <option key={index} value={option.value}>{option.label}</option>)}
-                    </select>
+                    <div className="relative">
+                        <div className="select-field__arrow">
+                            <div className="fa fa-caret-down"></div>
+                        </div>
+                        <select value={field.value} className="select-field" onBlur={this.setDirty} onChange={this.handleChange}>
+                            {field.options.map((option, index) => <option key={index} value={option.value}>{option.label}</option>)}
+                        </select>
+                    </div>
                 }
 
                 {(field.isRequired && !this.state.pristine) && (field.value.length === 0 || field.value === '-1') &&
                     <div className="error">{field.label} is a required field</div>
+                }
+
+                {/*field.help &&
+                    <small className="help">{field.help}</small>
+                */}
+
+                {field.help &&
+                    <div className="pt10">
+                        {this.state.showHelp &&
+                            <div className="help mb10">
+                                <small>{field.help}</small>
+                            </div>
+                        }
+                        
+                        <a href="#" onClick={this.toggleHelp} className=""><small>Show/Hide help</small></a>
+
+                        
+
+                    </div>
                 }
 
                 

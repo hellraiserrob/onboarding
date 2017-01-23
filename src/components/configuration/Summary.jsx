@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ProgressBar from '../other/ProgressBar'
 
+import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
+
 import Number from './Number'
 
 class Summary extends Component {
@@ -49,6 +51,8 @@ class Summary extends Component {
 
         const progress = this.getProgress(services)
 
+        const data = [1,10,8,2,9,10,0,1,5,30,30,3,40,5,20,7,20]
+
         return (
             <div className={`row cf mb30 `} >
                 <div className="col-20">
@@ -72,14 +76,22 @@ class Summary extends Component {
                 </div>
                 <div className="col-20">
                     <p className="mb10 text-uppercase text-15">Tasks per day</p>
-                    <h1 className="mb10">8</h1>
-                    <small>On average since 00/00/00</small>
+                    <div className="relative mb25">
+                        <h1 className="mb10">8</h1>
+                        <div className="spark">
+                            <Sparklines data={data} width={100} height={25} margin={1}>
+                                <SparklinesLine color="#df073a" style={{ strokeWidth: "1.5px"}} />
+                                 <SparklinesReferenceLine type="mean" />
+                            </Sparklines>
+                        </div>
+                    </div>
+                    <small>On average in the last month</small>
                 </div>
                 <div className="col-20">
                     <p className="mb10 text-uppercase text-15">Feature requests</p>
-                    <h1 className="mb10">0</h1>
+                    <h1 className="mb30">2</h1>
 
-                    <a href="#">Request a feature</a>
+                    <a href="#" className="btn btn--danger btn--block btn--xs">Request a feature</a>
                 </div>
             </div>
         )

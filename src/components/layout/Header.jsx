@@ -4,16 +4,19 @@ import { Link } from 'react-router'
 import avatar from '../../images/avatar.png'
 
 const Header = () => (
-    <header className="mb30">
+    <header className="mb40">
         <div className="container">
             <div className="row cf">
                 <div className="col-6">
-                    <Link className="logo" to="/"><i className="fa fa-cog"></i></Link>
+                    <Link className="logo" to="/">
+                    {/*<i className="fa fa-cog"></i>*/}
+                    Logo
+                    </Link>
                 </div>
                 <div className="col-6 text-right">
                     
                     <a className="badge" href="#">
-                        Alerts
+                        <i className="fa fa-bell"></i>
                         <span className="badge__pin">3</span>
                     </a>
 

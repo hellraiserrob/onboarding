@@ -37,13 +37,43 @@ const Footer = () => (
                             <a href="#">Financial and network services</a>
                         </li>
                         <li>
-                            <a href="#">CSR</a>
+                            <a href="#">Merchant services</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div className="col-3">
+                    <div className="mb10 text-uppercase">News</div>
+                    <ul>
+                        <li>
+                            <a href="#">News</a>
                         </li>
                         <li>
-                            <a href="#">Organisation</a>
+                            <a href="#">Company annoucnements</a>
                         </li>
                         <li>
-                            <a href="#">Investor</a>
+                            <a href="#">Nets in social media</a>
+                        </li>
+                        <li>
+                            <a href="#">Press contacts</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div className="col-3">
+                    <div className="mb10 text-uppercase">Headquarters</div>
+                    <ul>
+                        <li className="mb20">
+                            
+                            Nets A/S<br />
+                            Address 1<br />
+                            Address 2<br />
+                            Town<br />
+                            City
+
+                        </li>
+                        <li>
+                            Tel: <strong>+45 44 68 44 68</strong>
                         </li>
                     </ul>
                 </div>
